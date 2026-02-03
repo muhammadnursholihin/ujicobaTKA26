@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Ujian TKA Cloud</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body oncontextmenu="return false" oncopy="return false">
+
+    <div id="loader">
+        <div class="spinner"></div>
+        <p>Menghubungkan ke Database Cloud...</p>
+    </div>
+
+    <div id="login-overlay" class="modal-bg">
+        <div class="login-card">
+            <i class="fas fa-user-shield fa-3x" style="color: #2563eb; margin-bottom: 20px;"></i>
+            <h2>Portal Ujian TKA</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="prosesLogin()" class="btn-primary">Masuk Ujian</button>
+        </div>
+    </div>
+
+    <div class="dashboard" id="main-dashboard" style="display: none;">
+        <header>
+            <div class="user-info">
+                <i class="fas fa-user-circle"></i> <span id="user-display">User</span>
+            </div>
+            <button onclick="location.reload()" class="btn-logout">Keluar</button>
+        </header>
+
+        <main class="content">
+            <div id="welcome-screen" class="card" style="text-align: center;">
+                <h3>Selamat Datang di Ujian Online</h3>
+                <p>Klik tombol di bawah untuk memulai. Jangan pindah tab saat ujian!</p>
+                <button onclick="startUjian()" class="btn-primary" style="width: auto; padding: 12px 30px;">Mulai Sekarang</button>
+            </div>
+
+            <div id="ujian-screen" style="display: none;">
+                <div id="render-soal"></div>
+                <button onclick="confirmSubmit()" class="btn-primary" style="background: #10b981; margin-top: 20px;">Kirim Jawaban</button>
+            </div>
+        </main>
+
+        <div id="timer-box" class="badge timer">00:00</div>
+        <div id="warning-box" class="badge warning" style="display: none;">Pelanggaran: 0/3</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
