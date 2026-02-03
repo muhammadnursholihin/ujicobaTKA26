@@ -1,4 +1,4 @@
-const URL_CLOUD = "https://script.google.com/macros/s/AKfycbxGxfbTjntudHauWSjJXkcQKVkimlCicQigUmqfOKS_aOajSjWUpFy1fYKW0euCbBkoUg/exec";
+const URL_CLOUD = "https://script.google.com/macros/s/AKfycbwYJ1CrvvDHhqkE7hB57gFBERQ8yMmzkApYZpm6FbXMOvuXtwM_X7N2SVQqZh4O6AoU/exec";
 let bankSoal = [], cloudSiswa = [], cloudHasil = [], currentUser = null;
 let pelanggaran = 0, isWarningActive = false, jawabanSiswa = {};
 
@@ -117,3 +117,4 @@ async function confirmSubmit() {
     alert("Berhasil dikirim! Skor: " + skor);
     location.reload();
 }
+
